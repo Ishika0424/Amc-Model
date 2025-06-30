@@ -130,7 +130,7 @@ const EquipmentMaintenance = () => {
           type: "routine",
           description: "Quarterly maintenance and cleaning",
           technician: "John Doe",
-          cost: 150,
+          
           duration: 2,
         },
       ],
@@ -168,7 +168,7 @@ const EquipmentMaintenance = () => {
           type: "repair",
           description: "Lens cleaning and adjustment",
           technician: "Jane Smith",
-          cost: 80,
+       
           duration: 1,
         },
       ],
@@ -192,7 +192,7 @@ const EquipmentMaintenance = () => {
           type: "replacement",
           description: "Battery replacement",
           technician: "Mike Johnson",
-          cost: 300,
+         
           partsUsed: ["UPS Battery Pack"],
           duration: 3,
         },
@@ -228,7 +228,7 @@ const EquipmentMaintenance = () => {
     type: "routine" as "routine" | "repair" | "replacement" | "upgrade",
     description: "",
     technician: "",
-    cost: "",
+    
     duration: "",
     nextServiceDate: "",
   });
@@ -351,7 +351,7 @@ const EquipmentMaintenance = () => {
       type: newService.type,
       description: newService.description,
       technician: newService.technician,
-      cost: newService.cost ? parseFloat(newService.cost) : undefined,
+   
       duration: newService.duration ? parseFloat(newService.duration) : 0,
     };
 
@@ -375,7 +375,7 @@ const EquipmentMaintenance = () => {
       type: "routine",
       description: "",
       technician: "",
-      cost: "",
+     
       duration: "",
       nextServiceDate: "",
     });
@@ -1030,19 +1030,7 @@ const EquipmentMaintenance = () => {
 
             <div className="grid grid-cols-3 gap-4">
               <div className="space-y-2">
-                <Label htmlFor="cost">Cost (₹)</Label>
-                <Input
-                  id="cost"
-                  type="number"
-                  value={newService.cost}
-                  onChange={(e) =>
-                    setNewService((prev) => ({ ...prev, cost: e.target.value }))
-                  }
-                  placeholder="0.00"
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="duration">Duration (hours)</Label>
+                
                 <Input
                   id="duration"
                   type="number"
@@ -1135,10 +1123,8 @@ const EquipmentMaintenance = () => {
                         </div>
                         <div className="grid grid-cols-2 gap-4 text-sm">
                           <div>
-                            <span className="text-gray-600">Cost:</span>
-                            <p className="font-medium">
-                              {service.cost ? `₹${service.cost.toFixed(2)}` : "Not specified"}
-                            </p>
+                          
+                            
                           </div>
                           <div>
                             <span className="text-gray-600">Duration:</span>

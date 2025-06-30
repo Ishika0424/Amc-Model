@@ -390,6 +390,35 @@ const TaskCategorySection: React.FC<TaskCategorySectionProps> = ({
 }) => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      {/* Total Tasks */}
+            {/* Total Tasks */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <FileText className="h-5 w-5 text-gray-700" />
+            Total Tasks
+          </CardTitle>
+          <CardDescription>
+            List of standard {category} tasks
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <ul className="list-disc list-inside text-gray-700 space-y-1">
+  {(
+    (category === "daily" &&
+      ["AV check", "OS update & Activation", "MS office Activation", "Hardware status (CPU, Monitor, Keyboard)", "Network Connectivity (DRONA, CIAG, DMZ, NKN)", "Cameras & Recordings", "UPS check", "AC Operational status(in SR)", "Biometric Check (Twice a day)", "Survillance System Check", "VC step working properly", "Printers/Scanners Status", "Respond to complaints" ]) ||
+    (category === "weekly" &&
+      ["VC Room", "Inspection(Cables fiber, power cable)", "Network switches", "SR HDD status ", "All Server workings", "Cleaning of SR and all Endpoint", "Run AVASYAM", "Unauthorized device Check"]) ||
+    (category === "monthly" && ["Firewall check", "Backup & Recovery"]) ||
+    []
+  ).map((task, index) => (
+    <li key={index}>{task}</li>
+  ))}
+</ul>
+
+        </CardContent>
+      </Card>
+
       {/* Pending Tasks */}
       <Card>
         <CardHeader>

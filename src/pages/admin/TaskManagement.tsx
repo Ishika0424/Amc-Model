@@ -552,7 +552,7 @@ const TaskManagement = () => {
                 >
                   Cancel
                 </Button>
-                <Button onClick={handleCreateTask}>Create Task</Button>
+                
               </DialogFooter>
             </DialogContent>
           </Dialog>
@@ -983,14 +983,8 @@ const TaskCategoryContent: React.FC<TaskCategoryContentProps> = ({
                   {template.frequency && <span>{template.frequency}</span>}
                 </div>
               </div>
-              <Button
-                size="sm"
-                onClick={() => onCreateFromTemplate(template)}
-                className="ml-4"
-              >
-                <Plus className="h-4 w-4 mr-1" />
-                Create
-              </Button>
+              
+               
             </div>
           ))}
         </CardContent>
